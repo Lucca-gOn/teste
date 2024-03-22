@@ -47,11 +47,10 @@ namespace WebAPI.Controllers
 
             user.Medico = new Medico();
 
-            user.Paciente.DataNascimento = pacienteModel.DataNascimento;
-            user.Paciente.Rg = pacienteModel.Rg;
-            user.Paciente.Cpf = pacienteModel.Cpf;
-
-            pacienteRepository.Cadastrar(user);
+            user.Medico.Crm = medicoModel.Crm;
+            user.Medico.EspecialidadeId = medicoModel.EspecialidadeId;
+            
+            _medicoRepository.Cadastrar(user);
 
             return Ok();
         }
